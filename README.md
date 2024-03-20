@@ -1,5 +1,5 @@
 Extrator de Produtos Afiliados
-Este é um programa Python que extrai informações de produtos do site da Magalu e exibe promoções, ao adicionar a quantidade de porcentagem ele destaca o produto na segunda aba.
+Este é um programa Python que extrai informações de produtos do site da Magalu e exibe no campos designados, ao adicionar a quantidade de porcentagem ele destaca o produto na segunda aba.
 
 Funcionalidades
 Extrai informações de produtos da magalu fornecido pelo usuário.
