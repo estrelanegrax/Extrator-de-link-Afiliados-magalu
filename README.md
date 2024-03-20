@@ -25,7 +25,7 @@ Para transformar o código Python em um arquivo executável (.exe) no Windows, v
 
 Instale o PyInstaller executando pip install pyinstaller.
 No terminal de comando, navegue até o diretório onde o código-fonte está localizado.
-Execute o comando pyinstaller --onefile link.py para gerar o arquivo executável.
+Execute o comando pyinstaller --onefile magalu.py para gerar o arquivo executável.
 Após a conclusão, você encontrará o arquivo executável na pasta dist.
 Contribuindo
 Se deseja contribuir com melhorias ou corrigir problemas, sinta-se à vontade para abrir uma "issue" ou enviar um "pull request".
