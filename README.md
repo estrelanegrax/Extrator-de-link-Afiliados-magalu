@@ -1,8 +1,9 @@
-Extrator de Produtos
-Este é um programa Python que extrai informações de produtos de um site e exibe promoções com base em uma porcentagem mínima de desconto. Ele utiliza bibliotecas como requests, BeautifulSoup e tkinter.
+Extrator de Produtos Afiliados
+Este é um programa Python que extrai informações de produtos do site da Magalu e exibe promoções, ao adicionar a quantidade de porcentagem ele destaca o produto na segunda aba.
 
 Funcionalidades
-Extrai informações de produtos de um site fornecido pelo usuário.
+Extrai informações de produtos da magalu fornecido pelo usuário.
+Cria um posto de Afiliado ja pronto para postar no whatsap
 Permite definir uma porcentagem mínima de desconto.
 Exibe as promoções com desconto igual ou superior à porcentagem mínima.
 Interface gráfica simples para interação do usuário.
