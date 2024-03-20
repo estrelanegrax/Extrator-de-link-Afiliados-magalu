@@ -50,15 +50,31 @@ def get_discount_percentage(item):
         print(f"Erro ao calcular a porcentagem de desconto: {e}")
     return 0, installment_info  # Retorna 0 e a informação de parcelamento
 
+
 # Função ajustada para exibir produtos, agora incluindo parcelamento
 def display_product(widget, item, nome_loja):
     link_tag = item.find('a', attrs={'data-testid': 'product-card-container'})
     product_url = link_tag.get('href')
     full_url = f"https://www.magazinevoce.com.br/{nome_loja}{product_url}" if product_url.startswith('/') else product_url
 
-    product_title = clean_filename(item.find('h2', {'data-testid': 'product-title'}).text)
-    price_original = item.find('p', {'data-testid': 'price-original'}).text.strip()
-    price_pix = item.find('p', {'data-testid': 'price-value'}).text.strip()
+    product_title_tag = item.find('h2', {'data-testid': 'product-title'})
+    if product_title_tag:
+        product_title = clean_filename(product_title_tag.text)
+    else:
+        product_title = "Título não disponível"
+
+    price_original_tag = item.find('p', {'data-testid': 'price-original'})
+    if price_original_tag:
+        price_original = price_original_tag.text.strip()
+    else:
+        price_original = "Preço original não disponível"
+
+    price_pix_tag = item.find('p', {'data-testid': 'price-value'})
+    if price_pix_tag:
+        price_pix = price_pix_tag.text.strip()
+    else:
+        price_pix = "Preço com desconto não disponível"
+
     discount_percentage, installment_info = get_discount_percentage(item)  # Agora também recebe a informação de parcelamento
 
     message = f"*{product_title}*\n\n"
@@ -69,6 +85,7 @@ def display_product(widget, item, nome_loja):
     message += f"Link da compra 👇:\n {full_url}\n\n"
 
     widget.insert(tk.END, message)
+
 
 # Função chamada pelo botão para iniciar o processamento
 def fetch_and_process_products_thread():
